@@ -1,5 +1,11 @@
 # https://git
 kustomize.io/
 
+# https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
 
-curl -s -o .base/ #1.yaml https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/examples/helloWorld/{configMap,deployment,kustomization,service}.yaml
+
+
+
+
+
+https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/

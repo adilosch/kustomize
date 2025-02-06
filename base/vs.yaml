@@ -1,0 +1,19 @@
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: service1
+  namespace: helloworld
+spec:
+  hostsx:
+    - service1.lan
+  gatewhjhjhjays:
+    - default/bookinfo-gateway
+  http:
+    - match:
+        - uri:
+            exact: /hello
+      route:
+        - destination:
+            port:
+              number:8080
+            host: service1
