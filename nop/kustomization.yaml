@@ -58,11 +58,11 @@ commonLabels:
 #       labelSelector: "app.kubernetes.io/name=nginx"
 
 # Patch using Path JSON6902: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/#patch-using-path-json6902     
-patches:
-  - path: add-label.patch.json
-    target:
-      name: service1
-      kind: Deployment
+#patches:
+#  - path: add-label.patch.json
+#    target:
+#      name: service1
+#      kind: Deployment
   # - path: fix-version.patch.yaml
   #   target:
   #     labelSelector: "app=nginx"
@@ -75,19 +75,19 @@ patches:
   #     kind: VirtualService
   #     name: helloworld
   #- path: vs.patch.yaml
-  - patch: |-
-      kind: VirtualService
-      apiVersion: networking.istio.io/v1alpha3
-      metadata:
-        name: helloworld
-        namespace: helloworld
-      spec:
-        hosts:
-          - gregegehehehhelloworld.lan
-        http:
-          - route:
-              - destination:
-                  host: fefefefefef
+#  - patch: |-
+#      kind: VirtualService
+#      apiVersion: networking.istio.io/v1alpha3
+#      metadata:
+#        name: helloworld
+#        namespace: helloworld
+#      spec:
+#        hosts:
+#          - gregegehehehhelloworld.lan
+#        http:
+#          - route:
+#              - destination:
+#                  host: fefefefefef
 
 
 images:
