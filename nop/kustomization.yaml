@@ -1,6 +1,6 @@
 # kustomization.yaml
 resources:
-- ../../base
+- ../base
 
 #namespace: prod
 namePrefix: nop-
