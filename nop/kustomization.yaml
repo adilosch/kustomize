@@ -95,4 +95,4 @@ resources:
 images:
 - name: nginx
   newName: nginx
-  newTag: "3.9r3r3"
+  newTag: "alpine3.20"
