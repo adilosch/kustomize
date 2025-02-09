@@ -3,13 +3,13 @@ resources:
 - ../base
 
 #namespace: prod
-namePrefix: nop-
-
-labels:
-  - pairs:
-      app: my-service1
-      env: nop
-      x: "y"
+#namePrefix: nop-
+#
+#labels:
+#  - pairs:
+#      app: my-service1
+#      env: nop
+#      x: "y"
 
 
 # Patch using Inline Strategic Merge: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/#patch-using-inline-strategic-merge
