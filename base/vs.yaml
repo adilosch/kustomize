@@ -2,18 +2,17 @@ kind: VirtualService
 apiVersion: networking.istio.io/v1alpha3
 metadata:
   name: service1
-  namespace: helloworld
 spec:
-  hostsx:
-    - service1.lan
-  gatewhjhjhjays:
+  hosts:
+    - nginx.local
+  gateways:
     - default/bookinfo-gateway
   http:
     - match:
         - uri:
-            exact: /hello
+            exact: /
       route:
         - destination:
             port:
-              number:8080
-            host: service1
+              number: 80
+            host: nginx-service
