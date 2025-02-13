@@ -6,11 +6,11 @@ spec:
   hosts:
     - nginx.local
   gateways:
-    - default/bookinfo-gateway
+    - istio-samples/bookinfo-gateway
   http:
     - match:
         - uri:
-            exact: /
+            prefix: /
       route:
         - destination:
             port:

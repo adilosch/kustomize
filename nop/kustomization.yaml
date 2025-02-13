@@ -13,25 +13,25 @@ labels:
 
 
 # Patch using Inline Strategic Merge: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/#patch-using-inline-strategic-merge
-# patches:
+patches:
 #   - patch: |-
 #       apiVersion: apps/v1
 #       kind: Deployment
 #       metadata:
-#         name: dummy-app
+#         name: nginx-deployment
 #         labels:
-#           app.kubernetes.io/version: 1.21.0      
-#   - patch: |-
-#       apiVersion: apps/v1
-#       kind: Deployment
-#       metadata:
-#         name: not-used
-#       spec:
-#         template:
-#           spec:
-#             containers:
-#               - name: nginx
-#                 image: nginx:1.21.0      
+#           app.kubernetes.io/version: 1.23.0
+   - patch: |-
+       apiVersion: apps/v1
+       kind: Deployment
+       metadata:
+         name: not-used
+       spec:
+         template:
+           spec:
+             containers:
+               - name: nginx
+                 image: nginx:1.21.0
 #     target:
 #       labelSelector: "app.kubernetes.io/name=nginx"
 
@@ -76,7 +76,7 @@ labels:
   #     version: networking.istio.io/v1alpha3
   #     kind: VirtualService
   #     name: helloworld
-  #- path: vs.patch.yaml
+   #- path: vs.patch.yaml
 #  - patch: |-
 #      kind: VirtualService
 #      apiVersion: networking.istio.io/v1alpha3
@@ -92,7 +92,7 @@ labels:
 #                  host: fefefefefef
 
 
-images:
-- name: nginx
-  newName: nginx
-  newTag: "alpine3.20"
+#images:
+#- name: nginx
+#  newName: nginx
+#  newTag: "alpine3.20"

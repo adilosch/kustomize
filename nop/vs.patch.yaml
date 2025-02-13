@@ -1,10 +1,9 @@
 kind: VirtualService
 apiVersion: networking.istio.io/v1alpha3
 metadata:
-  name: helloworld
-  namespace: helloworld
+  name: service1
 spec:
   http:
     - route:
         - destination:
-            host: fefefefefef
+            host: nop-nginx-service

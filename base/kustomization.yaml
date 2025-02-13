@@ -3,6 +3,7 @@ kind: Kustomization
 
 
 resources:
-  - deployment.yaml
-  - service.yaml
-  - vs.yaml
+  #- deployment.yaml
+  - deployment_not_used.yaml
+  #- service.yaml
+  #- vs.yaml
