@@ -7,9 +7,9 @@ metadata:
   labels:
     strimzi.io/cluster: my-cluster
 spec:
-  partitions: {{ .partitions }}
-  replicas: {{ .replicas }}
+  partitions: {{ default 1 .partitions }}
+  replicas: {{ default 1 .replicas }}
   config:
-    retention.ms: {{ .retentionMs }}
+    retention.ms: {{ default 86400000 .retentionMs }}
 ---
 {{- end }}
