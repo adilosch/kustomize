@@ -8,14 +8,15 @@ metadata:
     strimzi.io/cluster: my-cluster
 spec:
   authentication:
-    type: scram-sha-512
+    type: scram-sha-512  # If using SCRAM authentication
   authorization:
+    type: acl  # Use 'acl' type for ACL-based authorization
     acls:
       {{- range .acl }}
       - resource:
           type: topic
           name: {{ .topic }}
-        operation: {{ .permissions | join ", " }}
+        operation: {{ .permissions | join ", " | capitalize }}  # Ensure permissions are properly capitalized
       {{- end }}
 ---
 {{- end }}
