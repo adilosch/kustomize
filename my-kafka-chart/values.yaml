@@ -1,5 +1,5 @@
-kafka:
-  topics:
-    - {{ .Files.Get "values/topics-values.yaml" | fromYaml }}
-  users:
-    - {{ .Files.Get "values/user-values.yaml" | fromYaml }}
+topics:
+  - {{ .Files.Get "values/topics-values.yaml" | fromYaml }}
+
+users:
+  - {{ .Files.Get "values/users-values.yaml" | fromYaml }}
