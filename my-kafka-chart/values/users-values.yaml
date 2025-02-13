@@ -18,3 +18,4 @@ kafka:
         - topic: topic-three
           permissions:
             - Write
+    - name: user-four
