@@ -16,7 +16,7 @@ spec:
       - resource:
           type: topic
           name: {{ .topic }}
-        operation: {{ .permissions | join ", " | capitalize }}  # Ensure permissions are properly capitalized
+        operation: {{ .permissions | join ", " | title }}  # Use 'title' instead of 'capitalize' for proper capitalization
       {{- end }}
 ---
 {{- end }}
