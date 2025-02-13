@@ -1,4 +1,5 @@
-{{- range .Values.kafka.users }}
+{{- $users := .Files.Get .Values.usersFile | fromYaml }}
+{{- range $users.kafka.users }}
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:

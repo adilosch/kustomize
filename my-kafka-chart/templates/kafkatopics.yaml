@@ -1,4 +1,5 @@
-{{- range .Values.kafka.topics }}
+{{- $topics := .Files.Get .Values.topicsFile | fromYaml }}
+{{- range $topics.kafka.topics }}
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
