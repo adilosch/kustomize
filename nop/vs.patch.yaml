@@ -1,9 +1,0 @@
-kind: VirtualService
-apiVersion: networking.istio.io/v1alpha3
-metadata:
-  name: service1
-spec:
-  http:
-    - route:
-        - destination:
-            host: nop-nginx-service
