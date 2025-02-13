@@ -1,14 +1,5 @@
-kafka:
-  topics:
-    - name: topic-one
-      partitions: 3
-      replicas: 2
-      retentionMs: 604800000  # 7 days in milliseconds
-    - name: topic-two
-      partitions: 5
-      replicas: 3
-      retentionMs: 864000000  # 10 days in milliseconds
-    - name: topic-three
-      partitions: 2
-      replicas: 1
-      retentionMs: 259200000  # 3 days in milliseconds
+topics:
+  - {{ .Files.Get "values/topics-values.yaml" | fromYaml }}
+
+users:
+  - {{ .Files.Get "values/users-values.yaml" | fromYaml }}

@@ -1,0 +1,19 @@
+kafka:
+  users:
+    - name: user-one
+      acl:
+        - topic: topic-one
+          permissions:
+            - read
+            - write
+    - name: user-two
+      acl:
+        - topic: topic-two
+          permissions:
+            - read
+    - name: user-three
+      acl:
+        - topic: topic-three
+          permissions:
+            - write
+
