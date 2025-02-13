@@ -4,8 +4,7 @@ kafka:
       acl:
         - topic: topic-one
           permissions:
-            - Read
-            - Write
+            - Read, Write
     - name: user-two
       acl:
         - topic: topic-two
