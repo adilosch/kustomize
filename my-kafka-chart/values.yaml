@@ -1,5 +1,2 @@
-topics:
-  - {{ .Files.Get "values/topics-values.yaml" | fromYaml }}
-
-users:
-  - {{ .Files.Get "values/users-values.yaml" | fromYaml }}
+topicsFile: "values/topics-values.yaml"
+usersFile: "values/users-values.yaml"
