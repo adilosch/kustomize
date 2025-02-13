@@ -10,13 +10,13 @@ spec:
   authentication:
     type: scram-sha-512  # If using SCRAM authentication
   authorization:
-    type: acl  # Use 'acl' type for ACL-based authorization
+    type: simple  # Use 'simple' as the type for user-level authorization
     acls:
       {{- range .acl }}
       - resource:
           type: topic
           name: {{ .topic }}
-        operation: {{ .permissions | join ", " | title }}  # Use 'title' instead of 'capitalize' for proper capitalization
+        operation: {{ .permissions | join ", " | title }}  # Ensure permissions are properly capitalized
       {{- end }}
 ---
 {{- end }}
