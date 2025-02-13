@@ -3,7 +3,7 @@ kafka:
     - name: user-one
       acl:
         - topic: topic-one
-          permissions: {"Write", "Read"}
+          permissions: ["Write", "Read"]
     - name: user-two
       acl:
         - topic: topic-two
