@@ -2,11 +2,11 @@ kafka:
   topics:
     - name: topic-one
       partitions: 1
-      replicas: 2
+      replicas: 1
       retentionMs: 604800000  # 7 days in milliseconds
     - name: topic-two
       partitions: 1
-      replicas: 3
+      replicas: 1
       retentionMs: 864000000  # 10 days in milliseconds
     - name: topic-three
       partitions: 1
