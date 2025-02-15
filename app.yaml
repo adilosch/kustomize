@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka
+  name: kafka-users
   namespace: argocd
 spec:
   destination:
@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: my-kafka-chart
+    path: kafka-users
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: kafka_with_helm
+    targetRevision: kafka-users
