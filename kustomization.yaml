@@ -1,2 +1,3 @@
 resources:
   - ./kafka-user/user1.yaml
+  - ./kafka-user/user3.yaml
