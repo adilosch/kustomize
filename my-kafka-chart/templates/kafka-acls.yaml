@@ -1,5 +1,6 @@
 # templates/kafka-user.yaml
 {{- range .Values.kafkaUsers }}
+---
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
