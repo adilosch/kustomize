@@ -1,0 +1,22 @@
+{{- range .Values.topics }}
+{{- range .acls }}
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: {{ .user }}
+  labels:
+    strimzi.io/cluster: {{ $.Values.kafkaCluster }}
+spec:
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: {{ $.name }}
+          patternType: literal
+        operation: {{ .permissions }}
+        type: allow
+        principal: "User:{{ .user }}"
+---
+{{- end }}
+{{- end }}
