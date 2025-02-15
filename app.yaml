@@ -12,3 +12,10 @@ spec:
     path: kafka-users
     repoURL: git@github.com:adilosch/kustomize.git
     targetRevision: kafka-users
+  sources:
+  - path: .
+    repoURL: git@github.com:adilosch/kustomize.git
+    targetRevision: user1
+  - path: .
+    repoURL: git@github.com:adilosch/kubernetes-deployment.git
+    targetRevision: HEAD
