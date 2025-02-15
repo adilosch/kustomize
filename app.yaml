@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka
+  name: only_acls
   namespace: argocd
 spec:
   destination:
@@ -11,4 +11,4 @@ spec:
   source:
     path: my-kafka-chart
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: kafka_with_helm
+    targetRevision: only_acls

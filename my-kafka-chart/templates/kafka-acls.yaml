@@ -1,9 +1,9 @@
-{{- range .Values.topics }}
-{{- range .acls }}
+{{- range .Values.acls }}
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: {{ .user }}
+  namespace: {{ $.Values.namespace }}
   labels:
     strimzi.io/cluster: {{ $.Values.kafkaCluster }}
 spec:
@@ -12,11 +12,10 @@ spec:
     acls:
       - resource:
           type: topic
-          name: {{ $.name }}
+          name: {{ .topic }}
           patternType: literal
         operation: {{ .permissions }}
         type: allow
         principal: "User:{{ .user }}"
 ---
-{{- end }}
 {{- end }}

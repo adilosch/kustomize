@@ -1,22 +1,14 @@
+namespace: kafka
 kafkaCluster: my-cluster
 
-topics:
-  - name: topic-b1
-    partitions: 1
-    replicas: 1
-    retentionMs: 604800000  # 7 Tage
+kafkaUsers:
+  - name: team-a-service
     acls:
-      - user: team-b-service
+      - topic: topic-b1
         permissions: Write
-      - user: team-a-service  # Team A beantragt diese Berechtigung per Pull Request!
-        permissions: Read
-
-  - name: topic-b2
-    partitions: 1
-    replicas: 1
-    retentionMs: 259200000  # 3 Tage
+      - topic: topic-b2
+        permissions: Read, Write
+  - name: team-b-service
     acls:
-      - user: team-b-service
+      - topic: topic-b1
         permissions: Read
-      - user: team-a-service
-        permissions: Write
