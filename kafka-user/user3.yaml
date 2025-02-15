@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
-  name: user2
+  name: user3
 spec:
   authentication:
     type: scram-sha-512
@@ -10,5 +10,5 @@ spec:
     acls:
       - resource:
           type: topic
-          name: example-topic-test
+          name: example-topic-test-user3
         operation: Read

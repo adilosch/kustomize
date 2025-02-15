@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka-user2
+  name: kafka-user3
   namespace: argocd
 spec:
   destination:
@@ -11,4 +11,4 @@ spec:
   source:
     path: .
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: user2
+    targetRevision: user3
