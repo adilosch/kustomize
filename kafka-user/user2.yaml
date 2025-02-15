@@ -1,0 +1,11 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: user2
+spec:
+  authorization:
+    acls:
+      - resource:
+          type: topic
+          name: example-topic-test
+        operation: Read
