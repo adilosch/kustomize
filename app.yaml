@@ -1,14 +1,65 @@
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: kafka
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: '*'
+    server: '*'
+  sourceRepos:
+  - '*'
+
+---
+
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: onlyacls
+  name: kafka-user1
   namespace: argocd
 spec:
   destination:
     namespace: kafka
     server: https://kubernetes.default.svc
-  project: default
+  project: kafka
   source:
     path: my-kafka-chart
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: only_acls
+    targetRevision: user1
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kafka-user2
+  namespace: argocd
+spec:
+  destination:
+    namespace: kafka
+    server: https://kubernetes.default.svc
+  project: kafka
+  source:
+    path: my-kafka-chart
+    repoURL: git@github.com:adilosch/kustomize.git
+    targetRevision: user2
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kafka-user3
+  namespace: argocd
+spec:
+  destination:
+    namespace: kafka
+    server: https://kubernetes.default.svc
+  project: kafka
+  source:
+    path: my-kafka-chart
+    repoURL: git@github.com:adilosch/kustomize.git
+    targetRevision: user3

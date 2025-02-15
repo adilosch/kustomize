@@ -1,22 +1,16 @@
-# values.yaml
 kafkaUsers:
-  - name: user-one
+  user-one:
     acls:
-      - topic: topic-a
-        operation: Write
-      - topic: topic-b
-        operation: Read
-      - topic: topic-b
-        operation: Write
-  - name: user-two
+      - resourceType: "topic"
+        resourceName: "example-topic"
+        operation: "Read"
+      - resourceType: "topic"
+        resourceName: "example-topic"
+        operation: "Write"
+  user-two:
     acls:
-      - topic: topic-a
-        operation: Read
-      - topic: topic-c
-        operation: Write
-  - name: user-three
-    acls:
-      - topic: topic-b
-        operation: Read
-      - topic: topic-b
-        operation: Write
+      - resourceType: "group"
+        resourceName: "example-consumer-group"
+        operation: "Read"
+
+
