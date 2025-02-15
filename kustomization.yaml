@@ -1,0 +1,2 @@
+resources:
+  - ./kafka-user/user1.yaml
