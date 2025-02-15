@@ -3,6 +3,8 @@ kind: KafkaUser
 metadata:
   name: user2
 spec:
+  authentication:
+    type: scram-sha-512
   authorization:
     type: simple
     acls:
