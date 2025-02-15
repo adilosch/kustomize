@@ -1,14 +1,18 @@
-namespace: kafka
-kafkaCluster: my-cluster
-
+# values.yaml
 kafkaUsers:
-  - name: team-a-service
+  - name: user-one
     acls:
-      - topic: topic-b1
-        permissions: Write
-      - topic: topic-b2
-        permissions: Read, Write
-  - name: team-b-service
+      - topic: topic-a
+        operation: Write
+      - topic: topic-b
+        operation: Read, Write
+  - name: user-two
     acls:
-      - topic: topic-b1
-        permissions: Read
+      - topic: topic-a
+        operation: Read
+      - topic: topic-c
+        operation: Write
+  - name: user-three
+    acls:
+      - topic: topic-b
+        operation: Read, Write

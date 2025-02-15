@@ -1,21 +1,23 @@
-{{- range .Values.acls }}
+# templates/kafka-user.yaml
+{{- range .Values.kafkaUsers }}
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
-  name: {{ .user }}
-  namespace: {{ $.Values.namespace }}
-  labels:
-    strimzi.io/cluster: {{ $.Values.kafkaCluster }}
+  name: {{ .name }}
+  namespace: kafka
 spec:
+  authentication:
+    type: scram-sha-512  # Constant authentication type
   authorization:
     type: simple
     acls:
+      {{- range .acls }}
       - resource:
           type: topic
           name: {{ .topic }}
           patternType: literal
-        operation: {{ .permissions }}
+        operation: {{ .operation }}
         type: allow
-        principal: "User:{{ .user }}"
----
+        principal: "User:{{ $.name }}"
+      {{- end }}
 {{- end }}
