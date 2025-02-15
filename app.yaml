@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: only_acls
+  name: onlyacls
   namespace: argocd
 spec:
   destination:
