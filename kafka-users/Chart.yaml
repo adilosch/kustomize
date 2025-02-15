@@ -1,0 +1,10 @@
+apiVersion: v2
+name: kafka-users
+description: A Helm chart for managing Kafka users in Strimzi
+type: application
+version: 0.1.0
+appVersion: 3.5.0  # Update based on your Kafka version
+maintainers:
+  - name: YourTeam
+    email: team@example.com
+dependencies: []
