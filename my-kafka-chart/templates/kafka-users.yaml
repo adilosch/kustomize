@@ -1,5 +1,6 @@
-# templates/kafka-user.yaml
-{{- range .Values.kafkaUsers }}
+# templates/kafka-user-template.yaml
+
+{{- range .Values.users }}
 ---
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
@@ -8,16 +9,25 @@ metadata:
   namespace: kafka
 spec:
   authentication:
-    type: scram-sha-512  # Constant authentication type
+    type: scram-sha-512  # Replace with the appropriate authentication type if needed
   authorization:
     type: simple
     acls:
+      {{- if .acls }}
       {{- range .acls }}
       - resource:
           type: topic
           name: {{ .topic }}
           patternType: literal
         operation: {{ .operation }}
+        type: allow
+      {{- end }}
+      {{- else }}
+      - resource:
+          type: topic
+          name: "*"
+          patternType: literal
+        operation: Read
         type: allow
       {{- end }}
 {{- end }}

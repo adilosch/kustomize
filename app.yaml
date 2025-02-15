@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: onlyacls
+  name: kafkauserseparateinfolder
   namespace: argocd
 spec:
   destination:
@@ -11,4 +11,4 @@ spec:
   source:
     path: my-kafka-chart
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: only_acls
+    targetRevision: kafka_user_separate_in_folder

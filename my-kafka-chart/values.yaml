@@ -1,22 +1,16 @@
 # values.yaml
-kafkaUsers:
+users:
   - name: user-one
     acls:
       - topic: topic-a
-        operation: Write
-      - topic: topic-b
         operation: Read
       - topic: topic-b
         operation: Write
   - name: user-two
     acls:
-      - topic: topic-a
-        operation: Read
       - topic: topic-c
+        operation: Read
+      - topic: topic-d
         operation: Write
   - name: user-three
-    acls:
-      - topic: topic-b
-        operation: Read
-      - topic: topic-b
-        operation: Write
+    # No ACLs defined for user-three, default ACL (Read on all topics) will be applied
