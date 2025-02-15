@@ -4,6 +4,7 @@ metadata:
   name: user2
 spec:
   authorization:
+    type: simple
     acls:
       - resource:
           type: topic
