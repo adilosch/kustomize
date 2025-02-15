@@ -5,7 +5,9 @@ kafkaUsers:
       - topic: topic-a
         operation: Write
       - topic: topic-b
-        operation: Read, Write
+        operation: Read
+      - topic: topic-b
+        operation: Write
   - name: user-two
     acls:
       - topic: topic-a
@@ -15,4 +17,6 @@ kafkaUsers:
   - name: user-three
     acls:
       - topic: topic-b
-        operation: Read, Write
+        operation: Read
+      - topic: topic-b
+        operation: Write

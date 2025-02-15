@@ -18,6 +18,5 @@ spec:
           patternType: literal
         operation: {{ .operation }}
         type: allow
-        principal: "User:{{ $.name }}"
       {{- end }}
 {{- end }}
