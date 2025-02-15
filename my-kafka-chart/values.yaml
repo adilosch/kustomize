@@ -1,5 +1,5 @@
 kafkaUsers:
-  user-one:
+  user1:
     acls:
       - resourceType: "topic"
         resourceName: "example-topic"
@@ -7,10 +7,5 @@ kafkaUsers:
       - resourceType: "topic"
         resourceName: "example-topic"
         operation: "Write"
-  user-two:
-    acls:
-      - resourceType: "group"
-        resourceName: "example-consumer-group"
-        operation: "Read"
 
 

@@ -24,7 +24,7 @@ spec:
   destination:
     namespace: kafka
     server: https://kubernetes.default.svc
-  project: kafka
+  project: default
   source:
     path: my-kafka-chart
     repoURL: git@github.com:adilosch/kustomize.git
@@ -41,7 +41,7 @@ spec:
   destination:
     namespace: kafka
     server: https://kubernetes.default.svc
-  project: kafka
+  project: default
   source:
     path: my-kafka-chart
     repoURL: git@github.com:adilosch/kustomize.git
@@ -58,7 +58,7 @@ spec:
   destination:
     namespace: kafka
     server: https://kubernetes.default.svc
-  project: kafka
+  project: default
   source:
     path: my-kafka-chart
     repoURL: git@github.com:adilosch/kustomize.git
