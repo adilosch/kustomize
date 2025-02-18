@@ -1,0 +1,17 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  labels:
+    app.kubernetes.io/instance: kafka-users
+  name: userwithoutacl
+  namespace: kafka
+spec:
+  authentication:
+    type: scram-sha-512
+  authorization:
+    acls:
+    - operation: Read
+      resource:
+        name: example-topic-test-user1
+        type: topic
+    type: simple

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka-users
+  name: kafka-user-without-acl
   namespace: argocd
 spec:
   destination:
@@ -9,13 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kafka-users
+    path: .
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: kafka-users
-  sources:
-  - path: .
-    repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: user1
-  - path: .
-    repoURL: git@github.com:adilosch/kubernetes-deployment.git
-    targetRevision: HEAD
+    targetRevision: kafka_user_without_acl
