@@ -8,8 +8,8 @@ metadata:
 spec:
   authentication:
     type: scram-sha-512
-#  authorization:
-#    acls:
+  authorization:
+    acls: []
 #    - operation: Read
 #      resource:
 #        name: example-topic-test-user1
