@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: .
+    path: src
     repoURL: git@github.com:adilosch/kustomize.git
     targetRevision: kafka_user_without_acl
