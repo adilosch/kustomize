@@ -1,0 +1,21 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: {{ .Values.kafka.user }}
+  labels:
+    strimzi.io/cluster: kafka-cluster
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+{{- range .Values.kafka.acls }}
+      - resource:
+          type: topic
+          name: {{ .topic }}
+          patternType: literal
+        operations:
+{{ toYaml .permissions | indent 10 }}
+        host: "*"
+{{- end }}

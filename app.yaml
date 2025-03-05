@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka
+  name: devjurp-73
   namespace: argocd
 spec:
   destination:
@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: my-kafka-chart
+    path: kafka
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: kafka_with_helm
+    targetRevision: devjurp-73
