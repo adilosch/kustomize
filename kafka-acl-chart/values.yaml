@@ -1,0 +1,10 @@
+# values.yaml
+namespace: kafka
+
+# List of Kafka ACLs to create
+acls:
+  - name: acl1
+    principal: "User:app-user1"
+    topic: "topic1"
+    operations:
+      - "Read"

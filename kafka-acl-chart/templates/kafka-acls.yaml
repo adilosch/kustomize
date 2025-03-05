@@ -1,0 +1,16 @@
+# templates/kafkaacls.yaml
+{{- range .Values.acls }}
+---
+apiVersion: kafka.acl.io/v1alpha1
+kind: KafkaAcl
+metadata:
+  name: {{ .name }}
+  namespace: {{ $.Values.namespace }}
+spec:
+  principal: {{ .principal | quote }}
+  topic: {{ .topic | quote }}
+  operations:
+    {{- range .operations }}
+    - {{ . | quote }}
+    {{- end }}
+{{- end }}

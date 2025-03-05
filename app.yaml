@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: my-kafka-chart
+    path: kafka-acl-chart
     repoURL: git@github.com:adilosch/kustomize.git
-    targetRevision: only_acls
+    targetRevision: kafka-acl-chart
