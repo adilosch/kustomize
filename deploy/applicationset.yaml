@@ -1,28 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: simple-appset
+  namespace: argocd
 spec:
-  goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
   generators:
-  - list:
-      elements:
-      - cluster: engineering-dev
-        url: https://1.2.3.4
-      - cluster: engineering-prod
-        url: https://2.4.6.8
-      - cluster: finance-preprod
-        url: https://9.8.7.6
+    - list:
+        elements:
+          - name: app1
+          - name: app2
+          - name: app3
   template:
     metadata:
-      name: '{{.cluster}}-guestbook'
+      name: '{{name}}'
     spec:
-      project: my-project
+      project: appset
       source:
-        repoURL: https://github.com/infra-team/cluster-deployments.git
+        repoURL: https://github.com/argoproj/argocd-example-apps.git
         targetRevision: HEAD
-        path: guestbook/{{.cluster}}
+        path: guestbook
       destination:
-        server: '{{.url}}'
-        namespace: guestbookll
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
