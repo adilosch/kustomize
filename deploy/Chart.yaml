@@ -1,0 +1,4 @@
+apiVersion: v2
+name: appset-chart
+description: A simple Helm chart to generate an ArgoCD ApplicationSet
+version: 0.1.0
