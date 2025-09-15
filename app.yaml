@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appsets
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deploy
+    repoURL: git@github.com:adilosch/kustomize.git
+    targetRevision: appsets
+  syncPolicy:
+    automated: {}

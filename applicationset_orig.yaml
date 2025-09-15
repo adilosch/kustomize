@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: simple-appset
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - name: app1
+          - name: app2
+          - name: app3
+  template:
+    metadata:
+      name: '{{name}}'
+      labels:
+        app: appset
+    spec:
+      project: appset
+      source:
+        repoURL: https://github.com/argoproj/argocd-example-apps.git
+        targetRevision: HEAD
+        path: guestbook
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
