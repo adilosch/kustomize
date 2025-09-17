@@ -17,8 +17,8 @@ spec:
       project: appset
       source:
         repoURL: git@github.com:adilosch/kubernetes-deployment.git
-        targetRevision: HEAD
-        path: guestbook
+        targetRevision: main
+        path: .
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{`{{name}}`}}'
