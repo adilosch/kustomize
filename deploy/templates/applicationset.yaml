@@ -16,7 +16,7 @@ spec:
     spec:
       project: appset
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps.git
+        repoURL: git@github.com:adilosch/kubernetes-deployment.gite
         targetRevision: HEAD
         path: guestbook
       destination:
