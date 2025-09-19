@@ -2,7 +2,7 @@
 kafka:
   users:
     - betatest-kafka1.identity
-    - git extern.user1
+    - extern.user1
   acls:
     - topic: betatest-kafka1-topic1
       permissions: ['Read', 'Write']
