@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: my-kafka-chart
+    path: .
     repoURL: git@github.com:adilosch/kustomize.git
     targetRevision: kafka_urp
