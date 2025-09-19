@@ -1,6 +1,7 @@
 # kustomization.yaml
 resources:
   - ./secrets/extern-user1-sealedsecret.yaml
+  - deploy.yaml
 #helmCharts:
 #  - name: kafka
 #    repo: https://charts.bitnami.com/bitnami
