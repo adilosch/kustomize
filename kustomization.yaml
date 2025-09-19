@@ -11,7 +11,7 @@ resources:
 
 helmCharts:
   - name: lokal
-    path: ../my-kafka-chart
+    path: ./my-kafka-chart
     releaseName: lokal
     namespace: kafka
     valuesFile: values.yaml
