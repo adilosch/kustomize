@@ -1,22 +1,17 @@
-kafkaCluster: my-cluster
+# ------------------   Kafka-User ------------------------------
+kafka:
+  users:
+    - betatest-kafka1.identity
+    - git extern.user1
+  acls:
+    - topic: betatest-kafka1-topic1
+      permissions: ['Read', 'Write']
 
-topics:
-  - name: topic-b1
-    partitions: 1
-    replicas: 1
-    retentionMs: 604800000  # 7 Tage
-    acls:
-      - user: team-b-service
-        permissions: Write
-      - user: team-a-service  # Team A beantragt diese Berechtigung per Pull Request!
-        permissions: Read
 
-  - name: topic-b2
-    partitions: 1
-    replicas: 1
-    retentionMs: 259200000  # 3 Tage
-    acls:
-      - user: team-b-service
-        permissions: Read
-      - user: team-a-service
-        permissions: Write
+# ------------------   Kafka-Topics --------------------------
+  topics:
+    - name: betatest-kafka1-topic1
+      partitions: 1
+      retention.ms: 2000012
+    - name: betatest-kafka1-topic2
+      partitions: 1
