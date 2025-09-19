@@ -1,6 +1,6 @@
 # kustomization.yaml
 resources:
-  - ./secrets/
+  - ./secrets/extern-user1-sealedsecret.yaml
 #helmCharts:
 #  - name: kafka
 #    repo: https://charts.bitnami.com/bitnami
@@ -10,8 +10,7 @@ resources:
 #    valuesFile: values.yaml
 
 helmCharts:
-  - name: lokal
-    path: ./my-kafka-chart
+  - name: my-kafka-chart
     releaseName: lokal
     namespace: kafka
     valuesFile: values.yaml

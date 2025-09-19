@@ -1,0 +1,19 @@
+# ------------------   Kafka-User ------------------------------
+kafka:
+  users:
+    - betatest-kafka1.identity
+    - extern.user1
+  acls:
+    - topic: betatest-kafka1-topic1
+      permissions: ['Read', 'Write']
+
+
+# ------------------   Kafka-Topics --------------------------
+  topics:
+    - name: betatest-kafka1-topic1
+      partitions: 1
+      replicas: 1
+      retention.ms: 2000012
+    - name: betatest-kafka1-topic2
+      partitions: 1
+      replicas: 1
