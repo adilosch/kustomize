@@ -12,6 +12,8 @@ kafka:
   topics:
     - name: betatest-kafka1-topic1
       partitions: 1
+      replicas: 1
       retention.ms: 2000012
     - name: betatest-kafka1-topic2
       partitions: 1
+      replicas: 1
