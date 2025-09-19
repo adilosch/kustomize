@@ -1,0 +1,17 @@
+# kustomization.yaml
+resources:
+  - ./secrets/
+#helmCharts:
+#  - name: kafka
+#    repo: https://charts.bitnami.com/bitnami
+#    version: 26.7.2
+#    releaseName: kafka
+#    namespace: kafka
+#    valuesFile: values.yaml
+
+helmCharts:
+  - name: lokal
+    path: ../my-kafka-chart
+    releaseName: lokal
+    namespace: kafka
+    valuesFile: values.yaml
