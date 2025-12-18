@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: progressive-sync-demo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/example/my-k8s-app.git
+    targetRevision: main
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+
+    # Progressive Sync Konfiguration
+    sync:
+      waves: true
+      # Pausen und Approvals können in ArgoCD v2.7+ genutzt werden
+      steps:
+        - wave: 0
+          pause: {}
+        - wave: 1
+          pause:
+            duration: 60s  # 1 Minute warten
+        - wave: 2
+          pause:
+            untilApproved: true  # manueller Approval im UI notwendig
