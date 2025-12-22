@@ -4,6 +4,7 @@ metadata:
   name: cleanup-job
   annotations:
     argocd.argoproj.io/hook: PreDelete
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded,BeforeHookCreation
 spec:
   template:
     spec:
