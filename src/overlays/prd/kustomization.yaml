@@ -2,7 +2,6 @@ namePrefix: dev-
 
 resources:
   - ../../base
-  - ./hooks/pre_delete_hook.yaml
 
 replicas:
   - name: nginx

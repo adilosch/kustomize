@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cleanup-job
+  annotations:
+    argocd.argoproj.io/hook: PreDelete
+spec:
+  template:
+    spec:
+      containers:
+      - name: cleanup
+        image: alpine
+        command: ["sh", "-c", "echo 'Running pre-delete cleanup...'"]
+      restartPolicy: Never

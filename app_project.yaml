@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: default
+  namespace: argocd
+spec:
+  syncWindows:
+  - kind: allow
+    schedule: "0 16 * * 1-5"
+    duration: 1h
+    timeZone: Europe/Berlin
+    applications:
+    - "*"
+    clusters:
+    - "*"
