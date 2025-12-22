@@ -1,5 +1,7 @@
 namePrefix: dev-
 
+namespace: nginx-dev
+
 resources:
   - ../../base
   - ./hooks/pre_delete_hook.yaml
