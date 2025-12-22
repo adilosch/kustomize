@@ -12,7 +12,7 @@ spec:
     directory:
       jsonnet: {}
       recurse: true
-    path: src/overlays/dev/
+    path: ./src/overlays/dev/
     repoURL: git@github.com:adilosch/kustomize.git
     targetRevision: main
   syncPolicy:
