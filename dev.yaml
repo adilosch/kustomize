@@ -14,7 +14,7 @@ spec:
       recurse: true
     path: ./src/overlays/dev/
     repoURL: git@github.com:adilosch/kubernetes-deployment.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
