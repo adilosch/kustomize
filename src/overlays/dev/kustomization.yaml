@@ -8,7 +8,7 @@ resources:
 
 replicas:
   - name: nginx
-    count: 3
+    count: 4
 
 images:
   - name: nginx
