@@ -9,9 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      jsonnet: {}
-      recurse: true
     path: ./src/overlays/dev/
     repoURL: git@github.com:adilosch/kustomize.git
     targetRevision: main
