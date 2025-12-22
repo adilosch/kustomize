@@ -13,7 +13,7 @@ spec:
       jsonnet: {}
       recurse: true
     path: ./src/overlays/dev/
-    repoURL: git@github.com:adilosch/kubernetes-deployment.git
+    repoURL: git@github.com:adilosch/kustomize.git
     targetRevision: main
   syncPolicy:
     syncOptions:
