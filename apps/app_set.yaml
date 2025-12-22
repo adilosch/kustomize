@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: test
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - env: dev
+        namespace: dev
+      - env: nop
+        namespace: nop
+      - env: prd
+        namespace: prd
+
+  template:
+    metadata:
+      name: test-{{env}}
+    spec:
+      project: default
+
+      source:
+        repoURL: git@github.com:adilosch/kustomize.git
+        targetRevision: main
+        path: src/overlays/{{env}}
+
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{namespace}}"
+
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
