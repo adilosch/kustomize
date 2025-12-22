@@ -3,7 +3,7 @@
 namespace: nginx-dev
 
 resources:
-  - ../../../base
+  - ../../base
   - ./hooks/pre_delete_hook.yaml
 
 replicas:
