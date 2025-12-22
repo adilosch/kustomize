@@ -4,12 +4,25 @@ metadata:
   name: default
   namespace: argocd
 spec:
-  syncWindows:
-  - kind: allow
-    schedule: "0 16 * * 1-5"
-    duration: 1h
-    timeZone: Europe/Berlin
-    applications:
-    - "*"
-    clusters:
-    - "*"
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: '*'
+    server: '*'
+  orphanedResources:
+    ignore:
+    - {}
+    warn: true
+  sourceRepos:
+  - '*'
+#  syncWindows:
+#  - applications:
+#    - '*'
+#    clusters:
+#    - '*'
+#    duration: 1h
+#    kind: allow
+#    manualSync: true
+#    schedule: 0 16 * * 1-5
+#    timeZone: Europe/Berlin
