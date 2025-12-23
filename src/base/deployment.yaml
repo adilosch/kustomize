@@ -17,3 +17,6 @@ spec:
           image: nginx:1.25
           ports:
             - containerPort: 80
+        - envFrom:
+          - configMapRef:
+              name: my-config
