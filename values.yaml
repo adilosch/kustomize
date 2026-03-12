@@ -1,7 +1,7 @@
 # ------------------   Kafka-User ------------------------------
 kafka:
-  users:
-    - betatest-kafka1.identity
+  users: []
+    #- betatest-kafka1.identity
     #- extern.user1
   acls: []
 
