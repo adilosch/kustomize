@@ -4,7 +4,7 @@ kind: KafkaUser
 metadata:
   name: "{{ . }}"
   labels:
-    strimzi.io/cluster: si-cluster
+    strimzi.io/cluster: my-cluster
 spec:
 {{- if hasPrefix "extern." . }}
   authentication:
