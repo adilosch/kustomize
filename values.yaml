@@ -3,9 +3,8 @@ kafka:
   users:
     - betatest-kafka1.identity
     #- extern.user1
-  acls:
-    - topic: betatest-kafka1-topic1
-      permissions: ['Read', 'Write']
+  acls: []
+
 
 
 # ------------------   Kafka-Topics --------------------------
