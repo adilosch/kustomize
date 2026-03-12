@@ -1,6 +1,6 @@
 # kustomization.yaml
 resources:
-  - ./secrets/extern-user1-sealedsecret.yaml
+  #- ./secrets/extern-user1-sealedsecret.yaml
   - deploy.yaml
 #helmCharts:
 #  - name: kafka
